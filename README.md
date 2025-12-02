@@ -53,6 +53,44 @@ Ensure that you have Xcode installed.
 
 Once you've completed the steps above, sync gradle and the `composeApp` Configuration should be available in IntelliJ
 
+## Running on Simulators/Emulators
+
+### Android
+
+1. **List available AVDs:**
+   ```sh
+   ~/Library/Android/sdk/emulator/emulator -list-avds
+   ```
+
+2. **Launch an AVD:**
+   ```sh
+   ~/Library/Android/sdk/emulator/emulator -avd <AVD_NAME>
+   ```
+
+3. **Install and Run:**
+   ```sh
+   ./gradlew :composeApp:installDebug
+   ```
+
+### iOS
+
+1. **List available Simulators:**
+   ```sh
+   xcrun simctl list devices available
+   ```
+
+2. **Boot a Simulator:**
+   ```sh
+   xcrun simctl boot "<DEVICE_NAME>"
+   open -a Simulator
+   ```
+
+3. **Run the App:**
+   Open the project in Xcode and run:
+   ```sh
+   open iosApp/iosApp.xcodeproj
+   ```
+
 ## Default KMP README
 
 This is a Kotlin Multiplatform project targeting Android, iOS.

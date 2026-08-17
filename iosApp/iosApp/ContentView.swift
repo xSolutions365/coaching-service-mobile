@@ -1,14 +1,13 @@
-import SwiftUI
 import Shared
+import SwiftUI
 
 struct ContentView: View {
     @State private var showContent = false
+
     var body: some View {
         VStack {
             Button("Click me!") {
-                withAnimation {
-                    showContent = !showContent
-                }
+                withAnimation { showContent.toggle() }
             }
 
             if showContent {
@@ -16,7 +15,7 @@ struct ContentView: View {
                     Image(systemName: "swift")
                         .font(.system(size: 200))
                         .foregroundColor(.accentColor)
-                    Text("SwiftUI: \(Greeting().greet())")
+                    Text("Hello, iOS")
                 }
                 .transition(.move(edge: .top).combined(with: .opacity))
             }
